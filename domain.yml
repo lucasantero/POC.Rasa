@@ -21,6 +21,8 @@ intents:
     use_entities: true
 - bot_clima:
     use_entities: true
+- bot_teste:
+    use_entities: true
 entities: []
 slots: {}
 responses:
@@ -39,5 +41,6 @@ responses:
   - text: I am a bot, powered by Rasa.
 actions:
 - action_clima
+- action_teste
 forms: {}
 e2e_actions: []

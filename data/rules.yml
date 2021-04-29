@@ -8,7 +8,12 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
-- rule: Teste teste
+- rule: Teste clima
   steps:
   - intent: bot_clima
   - action: action_clima
+- rule: Teste teste
+  steps:
+  - intent: bot_teste
+  - action: action_teste
+  
