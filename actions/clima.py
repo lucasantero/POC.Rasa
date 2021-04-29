@@ -10,6 +10,8 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+import requests
+
 class ActionClima(Action):
     def name(self) -> Text:
         return "action_clima"
@@ -18,6 +20,8 @@ class ActionClima(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="Teste Clima")
+        response = requests.get("http://localhost:1337/clima/123")
+
+        dispatcher.utter_message(text=response.text)
 
         return []
