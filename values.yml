@@ -1,0 +1,11 @@
+# rasa: Settings common for all Rasa containers
+rasa:
+  # additionalChannelCredentials which should be used by Rasa to connect to various
+  # input channels
+  additionalChannelCredentials:
+    rest:
+      # nothing needed here
+    telegram:
+      access_token: "1775142878:AAFoWLHSydA6-LeGdtZqFEfv5-TCcBfI8sU"
+      verify: "ConexaPocBot"
+      webhook_url: "https://7190cc3da2e1.ngrok.io/webhooks/telegram/webhook"
