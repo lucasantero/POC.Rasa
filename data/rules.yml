@@ -1,19 +1,39 @@
 version: "2.0"
 rules:
-- rule: Say goodbye anytime the user says goodbye
+- rule: Falar adeus sempre que o usuario disser adeus
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
-- rule: Say 'I am a bot' anytime the user challenges
+  - intent: adeus
+  - action: utter_adeus
+- rule: Falar "eu sou um bot" sempre que o usuario perguntar
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
-- rule: Teste clima
-  steps:
-  - intent: bot_clima
-  - action: action_clima
+  - intent: bot_desafio
+  - action: utter_sou_um_bot
+
+#- rule: Teste clima
+#  steps:
+#  - intent: bot_clima
+#    entities:
+#    - cidade
+#  - action: action_clima
+
 - rule: Teste teste
   steps:
   - intent: bot_teste
   - action: action_teste
   
+- rule: Ativar formulario de cadastro
+  steps:
+  - intent: cadastro
+  - action: cadastro_form
+  - active_loop: cadastro_form
+
+- rule: Submit formulario de cadastro
+  condition:
+  - active_loop: cadastro_form
+  steps:
+  - action: cadastro_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_cadastro
+  - action: utter_submit

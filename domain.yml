@@ -5,42 +5,80 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet:
+- ola:
     use_entities: true
-- goodbye:
+- adeus:
     use_entities: true
-- affirm:
+- afirmacao:
     use_entities: true
-- deny:
+- negacao:
     use_entities: true
-- mood_great:
+- animo_bem:
     use_entities: true
-- mood_unhappy:
+- animo_triste:
     use_entities: true
-- bot_challenge:
+- bot_desafio:
     use_entities: true
 - bot_clima:
     use_entities: true
 - bot_teste:
+    use_entities: []
+- cadastro:
     use_entities: true
-entities: []
-slots: {}
+- mood_triste:
+    use_entities: true
+- animo_mal:
+    use_entities: true
+- bot_arquivo:
+    use_entities: true
+entities:
+- cidade
+slots:
+  1_nome:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  2_email:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
-  utter_greet:
-  - text: Hey! How are you? teste git
-  utter_cheer_up:
+  utter_ola:
+  - text: Oii! Como voce está?
+  utter_animar:
   - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
-  utter_did_that_help:
-  - text: Did that help you?
-  utter_happy:
-  - text: Great, carry on!
-  utter_goodbye:
-  - text: Bye
-  utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+    text: Aqui uma coisa para te animar!
+  utter_isso_ajudou:
+  - text: Melhor?
+  utter_feliz:
+  - text: Otimo! Continua assim
+  utter_adeus:
+  - text: Tchau! 2
+  utter_sou_um_bot:
+  - text: Eu sou um bot feito com o Rasa
+  utter_ask_1_nome:
+  - text: Qual o seu nome?
+  utter_ask_2_email:
+  - text: Qual o seu email?
+  utter_submit:
+  - text: Cadastro realizado com sucesso!
 actions:
 - action_clima
 - action_teste
-forms: {}
+- action_cadastro
+- action_arquivo
+forms:
+  cadastro_form:
+    required_slots:
+      1_nome:
+      - type: from_text
+      2_email:
+      - type: from_text
 e2e_actions: []

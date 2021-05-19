@@ -20,8 +20,17 @@ class ActionClima(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        response = requests.get("http://localhost:1337/clima/123")
+        _api_key = "a9d78f0b1aef9609e958646f5c5ae8ab"
+        print(tracker.latest_message["entities"])
+        city_name = tracker.latest_message["entities"][0]["value"]
+        _mainEndpoint = "http://api.openweathermap.org/data/2.5/"
+        _cityNameSufix = "weather?q=" + city_name +"&appid=" + _api_key + "&units=metric"
 
-        dispatcher.utter_message(text=response.text)
+        uri = _mainEndpoint + _cityNameSufix
+
+
+        response = requests.get(uri)
+
+        dispatcher.utter_message(text="Temperatura de " + str(response.json()["main"]["temp"]) + " graus em " + city_name)
 
         return []

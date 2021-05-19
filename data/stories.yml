@@ -1,30 +1,38 @@
 version: "2.0"
-
 stories:
-
-- story: happy path
+- story: caminho feliz
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
+  - intent: ola
+  - action: utter_ola
+  - intent: animo_bem
+  - action: utter_feliz
+- story: caminho triste 1
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
+  - intent: ola
+  - action: utter_ola
+  - intent: animo_triste
+  - action: utter_animar
+  - action: utter_isso_ajudou
+  - intent: afirmacao
+  - action: utter_feliz
+- story: caminho triste 2
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: ola
+  - action: utter_ola
+  - intent: mood_triste
+  - action: utter_animar
+  - action: utter_isso_ajudou
+  - intent: negacao
+  - action: utter_adeus
+- story: clima goiania
+  steps:
+  - intent: bot_clima
+    entities:
+    - cidade: goiania
+  - action: action_clima
+- story: clima sao paulo
+  steps:
+  - intent: bot_clima
+    entities:
+    - cidade: sao paulo
+  - action: action_clima
