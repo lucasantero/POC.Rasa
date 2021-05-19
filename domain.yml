@@ -78,7 +78,7 @@ forms:
   cadastro_form:
     required_slots:
       1_nome:
-      - type: from_text
+        - type: from_text
       2_email:
-      - type: from_text
+        - type: from_text
 e2e_actions: []
