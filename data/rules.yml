@@ -21,19 +21,18 @@ rules:
   - intent: bot_teste
   - action: action_teste
   
-#- rule: Ativar formulario de cadastro
-#  steps:
-#  - intent: cadastro
-#  - action: cadastro_form
-#  - active_loop: cadastro_form
-
-#- rule: Submit formulario de cadastro
-#  condition:
-#  - active_loop: cadastro_form
-#  steps:
-#  - action: cadastro_form
-#  - active_loop: null
-#  - slot_was_set:
-#    - requested_slot: null
-#  - action: action_cadastro
-#  - action: utter_submit
+- rule: Ativar formulario de cadastro
+  steps:
+  - intent: cadastro
+  - action: cadastro_form
+  - active_loop: cadastro_form
+- rule: Submit formulario de cadastro
+  condition:
+  - active_loop: cadastro_form
+  steps:
+  - action: cadastro_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_cadastro
+  - action: utter_submit
