@@ -74,11 +74,11 @@ actions:
 - action_teste
 - action_cadastro
 - action_arquivo
-forms:
-  cadastro_form:
-    required_slots:
-      1_nome:
-      - type: from_text
-      2_email:
-      - type: from_text
+#forms:
+#  cadastro_form:
+#    required_slots:
+#      1_nome:
+#      - type: from_text
+#      2_email:
+#      - type: from_text
 e2e_actions: []
