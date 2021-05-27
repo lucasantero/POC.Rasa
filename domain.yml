@@ -23,6 +23,8 @@ intents:
     use_entities: true
 - bot_teste:
     use_entities: []
+- bot_grupo:
+    use_entities: []
 - cadastro:
     use_entities: true
 - mood_triste:
@@ -74,6 +76,7 @@ actions:
 - action_teste
 - action_cadastro
 - action_arquivo
+- action_grupo
 #forms:
 #  cadastro_form:
 #    required_slots:

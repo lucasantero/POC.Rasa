@@ -20,6 +20,11 @@ rules:
   steps:
   - intent: bot_teste
   - action: action_teste
+
+- rule: Get grupo
+  steps:
+  - intent: bot_grupo
+  - action: action_grupo
   
 #- rule: Ativar formulario de cadastro
 #  steps:

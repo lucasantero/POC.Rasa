@@ -79,6 +79,12 @@ nlu:
     - qual a temperatura em [paris](cidade)
     - como esta o tempo em [goiania](cidade)
     - clima em [lisboa](cidade)
+- intent: bot_grupo
+  examples: |
+    - grupo
+    - me da um grupo
+    - me fala um grupo
+    - quero um grupo
 - lookup: cidade
   examples: |
     - paris
