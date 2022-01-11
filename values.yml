@@ -1,3 +1,12 @@
+rasax:
+  # initialUser is the user which is created upon the initial start of Rasa X
+  initialUser:
+    # username specifies a name of this user
+    username: "admin"
+    # password for this user (leave it empty to skip the user creation)
+    password: "teste"
+    
+
 # rasa: Settings common for all Rasa containers
 rasa:
   # additionalChannelCredentials which should be used by Rasa to connect to various
@@ -8,4 +17,8 @@ rasa:
     telegram:
       access_token: "1775142878:AAFoWLHSydA6-LeGdtZqFEfv5-TCcBfI8sU"
       verify: "ConexaPocBot"
-      webhook_url: "https://7190cc3da2e1.ngrok.io/webhooks/telegram/webhook"
+      webhook_url: "https://poc-cluster-dns-7eb18987.hcp.brazilsouth.azmk8s.io:443/webhooks/telegram/webhook"
+      
+app:
+    name: "lucasantero/customactionserver"
+    tag: "123"

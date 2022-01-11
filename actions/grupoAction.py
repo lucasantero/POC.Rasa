@@ -20,8 +20,8 @@ class ActionGrupo(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        url = "https://9d8919557a17.ngrok.io/grupo"
+        url = "https://1eda9608d955.ngrok.io/grupo"
         response = requests.get(url)
-        dispatcher.utter_message(text=str(response.json()["Mensagem"]))
+        dispatcher.utter_message(text=str(response.json()["Message"]))
 
         return []
